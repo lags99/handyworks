@@ -22,6 +22,7 @@
     <!-- Scripts -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @laravelPWA
 
 </head>
 <body>

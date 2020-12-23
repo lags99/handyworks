@@ -71,7 +71,6 @@ class LoginController extends Controller
         } else {
             return redirect()->route('pre_register')->withInput([
                 'full_name' => $userGoogle->getName(),
-                'email' => $userGoogle->getEmail(),
                 'profile_picture' => $userGoogle->getAvatar(),
             ])->with('success', 'We got the credentials, please complete the form.');
         }
