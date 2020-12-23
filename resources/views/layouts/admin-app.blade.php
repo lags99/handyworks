@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>{{ config('app.name'.'| Backend', "HandyWorks | Backend") }}</title>
+    @laravelPWA
 </head>
 <body>
     @auth('admin')
