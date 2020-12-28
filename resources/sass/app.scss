@@ -7,4 +7,9 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-@import "custom";
+//Custom Styles
+@import "custom-bootstrap";
+@import "custom-styles";
+@import "toggle-classes";
+@import "custom-media-styles";
+@import "~aos/dist/aos.css";

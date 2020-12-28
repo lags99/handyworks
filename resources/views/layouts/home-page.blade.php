@@ -26,10 +26,9 @@
 
 </head>
 <body>
-   @include('includes.navbar')
-     @yield('content')
+  @include('includes.navbar')
+  @yield('content')
+  <script src="https://kit.fontawesome.com/f43319387c.js" crossorigin="anonymous"></script>
 </body>
-  
-
     
 </html>
