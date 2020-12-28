@@ -1,6 +1,69 @@
 @extends('layouts.home-page')
 @section('content')
-<div style="background-image: url({{ asset('img/worker.jpg') }})" class="jumbotron jumbotron-fluid hero d-flex justify-content-center align-items-center">
+    <main class="start">
+        <div class="start__slides">
+            <div class="start__slide active_slide start__slide--one">
+                <div class="start__slide__image">
+                    <img src="{{ asset('img/hw.png') }}" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in" data-aos-mirror="false" data-aos-once="false" data-aos-anchor-placement="top-center" alt="">
+                </div>
+                <div class="start__slide__content">
+                    <h2 class="start__slide__title">What Is HandyWorks</h2>
+                    <p class="start__slide__text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi maxime corporis quibusdam veritatis sit nobis recusandae obcaecati dolorem molestias eum, magni ipsam officia? Ullam distinctio cumque laboriosam! Totam, quidem voluptate!
+                    </p>
+                </div>
+            </div>
+            <div class="start__slide start__slide--two">
+                <div class="start__slide__image">
+                    <img src="{{ asset('img/tablet.png') }}" data-aos="fade-down" data-aos-duration="500" data-aos-easing="ease-in" data-aos-mirror="false" data-aos-once="false" data-aos-anchor-placement="top-center" alt="">
+                </div>
+                <div class="start__slide__content">
+                    <h2 class="start__slide__title">How It Works For Workers</h2>
+                    <p class="start__slide__text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi maxime corporis quibusdam veritatis sit nobis recusandae obcaecati dolorem molestias eum, magni ipsam officia? Ullam distinctio cumque laboriosam! Totam, quidem voluptate!
+                    </p>
+                </div>
+            </div>
+            <div class="start__slide start__slide--three">
+                <div class="start__slide__image">
+                    <img src="{{ asset('img/card.png') }}" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in" data-aos-mirror="false" data-aos-once="false" data-aos-anchor-placement="top-center" alt="">
+                </div>
+                <div class="start__slide__content">
+                    <h2 class="start__slide__title">How It Works For Clients</h2>
+                    <p class="start__slide__text">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi maxime corporis quibusdam veritatis sit nobis recusandae obcaecati dolorem molestias eum, magni ipsam officia? Ullam distinctio cumque laboriosam! Totam, quidem voluptate!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="start__slide start__slide--four" style="background-image: url({{asset('img/worker.jpg')}})">
+                <div class="start__slide__image start__slide__image--hide"></div>
+                <div class="start__slide__content start__slide__content--four">
+                    <div class="start__slide__actions" data-aos="fade-down" data-aos-duration="500" data-aos-easing="ease-in" data-aos-mirror="false" data-aos-once="false" data-aos-anchor-placement="top-center">
+                        <h2 class="start__slide__title start__slide__title--four">Join Us</h2>
+                        <a href="#" class="start__slide__link start__slide__link--hire">Hire A HandyWorker</a>
+                        <a href="{{ route('pre_register') }}" class="start__slide__link start__slide__link--become">Become A HandyWorker</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="start__controls">
+            <div class="start__controls__back">
+            </div>
+            <div class="start__controls__slides">
+                <div class="start__controls__slide active_controls"></div>
+                <div class="start__controls__slide"></div>
+                <div class="start__controls__slide"></div>
+                <div class="start__controls__slide"></div>
+            </div>
+            <div class="start__controls__next">
+            </div>
+        </div>
+    </main>
+@endsection
+
+{{-- <div style="background-image: url({{ asset('img/worker.jpg') }})" class="jumbotron jumbotron-fluid hero d-flex justify-content-center align-items-center">
         <div>
             <h1 class="text-center my-3">HandyWorks</h1>
             <div class="row justify-content-center my-4">
@@ -242,7 +305,7 @@
             </div>
         </div>
     </div>
-    {{-- <script>
+    <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoibGluY29sZGFyaGVuOTkiLCJhIjoiY2tpaTk0cjM2MDl5eTJzcW1keXI2dmg4NCJ9.a3F7jm1s9STZw-ZrQcF8xQ';
         let map = new mapboxgl.Map({
         container: 'map',
@@ -260,5 +323,3 @@
             @endforeach
         @endif
     </script> --}}
-    
-@endsection

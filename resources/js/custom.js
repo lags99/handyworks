@@ -1,4 +1,5 @@
 const feather = require('feather-icons/dist/feather');
+const AOS = require('aos');
 
 
 const month = document.querySelector('.month');
@@ -7,22 +8,6 @@ const year = document.querySelector('.year');
 const birth_date = document.querySelector('#birth_date');
 const date = document.querySelector('.date');
 
-const day_from = document.querySelector('.day_from');
-const day_to = document.querySelector('.day_to');
-const start_time = document.querySelector('.start_time');
-const end_time = document.querySelector('.end_time');
-const from_ampm = document.querySelector('.from_ampm');
-const to_ampm = document.querySelector('.to_ampm');
-const schedule = document.querySelector('.schedule');
-if(day_from|| day_to || start_time|| end_time|| from_ampm|| to_ampm|| schedule){
-    
-day_from.addEventListener('change', changeSched);
-day_to.addEventListener('change', changeSched);
-start_time.addEventListener('input', changeSched);
-end_time.addEventListener('input', changeSched);
-from_ampm.addEventListener('change', changeSched);
-to_ampm.addEventListener('change', changeSched);
-}
 
 if(month|| day|| year|| date|| birth_date){
     month.addEventListener('input', changeDate);
@@ -52,13 +37,55 @@ function changeDate() {
     }
     
 }
-function changeSched(){
-    if(!day_from.value || !day_to.value || !start_time.value || !end_time.value){
-        schedule.value = '';
-    }else{
-        schedule.value = `${day_from.value}-${day_to.value} ${start_time.value} ${from_ampm.value}-${end_time.value} ${to_ampm.value}`
-    }
-}
 
 feather.replace();
 $("#thank_you").modal('show');
+
+const side_nav = document.querySelector('.side-navigation');
+const nav_list = document.querySelector('#nav_list');
+const open_nav = document.querySelector('#menu-btn');
+const close_nav = document.querySelector('#close');
+const back_btn = document.querySelector('#back');
+
+open_nav.addEventListener('click', (e) => {
+    e.preventDefault();
+    side_nav.style.display = 'block';
+    setTimeout(() => {
+        nav_list.classList.add('showSideNav');
+    }, 100);
+})
+close_nav.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    nav_list.classList.remove('showSideNav')
+    setTimeout(() => {
+        side_nav.style.display = 'none';
+    }, 300);
+})
+
+//Back
+back_btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.history.back();
+});
+
+// Home Page Slider
+
+const slides = document.querySelectorAll('.start__slide');
+const controls = document.querySelectorAll('.start__controls__slide');
+
+
+controls.forEach((control, index) => {
+    control.addEventListener('click', (e) => {
+        const active_slide = document.querySelector('.active_slide');
+        const active_control = document.querySelector('.active_controls');
+        
+        active_control.classList.remove('active_controls');
+        active_slide.classList.remove('active_slide');
+
+        slides[index].classList.add('active_slide');
+        controls[index].classList.add('active_controls');
+      
+    });
+});
+AOS.init();

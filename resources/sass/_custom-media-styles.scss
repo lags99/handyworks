@@ -1,0 +1,47 @@
+@media (min-width: 1024px) {
+    .navigation-bar {
+        &__container {
+            padding: 1rem;
+        }
+    }
+    .start {
+        height: auto;
+        &__slides {
+            height: auto;
+        }
+        &__slide {
+            position: static;
+            width: 100%;
+            height: 100vh;
+            opacity: 1;
+            flex-direction: row;
+            &--four {
+                background-position: center top;
+            }
+
+            &__content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            &__image {
+                &--hide {
+                    display: block;
+                }
+            }
+            &__actions {
+                width: 70%;
+            }
+        }
+        &__controls {
+            display: none;
+        }
+    }
+}
+@media (min-width: 1280px) {
+    .navigation-bar {
+        &__back {
+            display: none;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+{{-- <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="{{route('index')}}"><img width="150px" src="{{ asset('img/hw.png') }}"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,18 +39,34 @@
     </ul>
   </div>
     </div>
-</nav>
-{{-- <div class="custom-navbar bg-light">
-    <div class="container d-flex">
-      <div class="custom-navbar-logo">
-        <a href="{{route('index')}}"><img width="150px" src="{{ asset('img/hw.png') }}"></a>
-      </div>
-      <nav class="custom-navbar-navigation">
-        <ul class="custom-navbar-list">
-          <li class="custom-navbar-item"><a href="{{ route('index') }}" class="custom-navbar-link">Home</a></li>
-          <li class="custom-navbar-item"><a href="{{ route('login') }}" class="custom-navbar-link">Sign In</a></li>
-          <li class="custom-navbar-item"><a href="{{ route('register') }}" class="custom-navbar-link"></a></li>
-        </ul>
-      </nav>
+</nav> --}}
+<div class="navigation-bar">
+  <div class="navigation-bar__container">
+    <div class="navigation-bar__back">
+      <a href="#" class="navigation-bar__back__btn" id="back">
+        <i class="fas fa-arrow-left"></i>
+      </a>
     </div>
-</div> --}}
+    <div class="navigation-bar__logo">
+      <img src="{{ asset('img/hw.png') }}" alt="Logo">
+    </div>
+    <div class="navigation-bar__menu">
+      <a href="#" class="navigation-bar__menu__btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="side-navigation">
+  <ul class="side-navigation__list" id="nav_list">
+    <li class="side-navigation__list__item side-navigation__close" id="close">
+      <a href="#" class="side-navigation__close__btn">
+        <i class="fas fa-times"></i>
+      </a>
+    </li>
+    <li class="side-navigation__list__item"><a href="{{route('index')}}"><i class="fas fa-home"></i> Home</a></li>
+    <li class="side-navigation__list__item"><a href="{{route('blog')}}"><i class="fas fa-newspaper"></i> News & Blog</a></li>
+    <li class="side-navigation__list__item"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Sign In</a></li>
+    <li class="side-navigation__list__item"><a href="{{ route('pre_register') }}"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+  </ul>
+</div>
