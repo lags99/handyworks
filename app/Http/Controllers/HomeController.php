@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Service;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,8 @@ class HomeController extends Controller
     }
     public function complete_profile()
     {
-        return view('auth.complete-profile');
+        $services = Service::orderBy('service_name', 'asc')->get();
+        return view('auth.complete-profile', ['services' => $services]);
     }
     public function upload_profile(Request $request)
     {

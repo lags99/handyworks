@@ -64,9 +64,15 @@
         <i class="fas fa-times"></i>
       </a>
     </li>
-    <li class="side-navigation__list__item"><a href="{{route('index')}}"><i class="fas fa-home"></i> Home</a></li>
+    @guest
+     <li class="side-navigation__list__item"><a href="{{route('index')}}"><i class="fas fa-home"></i> Home</a></li>
     <li class="side-navigation__list__item"><a href="{{route('blog')}}"><i class="fas fa-newspaper"></i> News & Blog</a></li>
     <li class="side-navigation__list__item"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Sign In</a></li>
     <li class="side-navigation__list__item"><a href="{{ route('pre_register') }}"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+    <li class="side-navigation__list__item"><a href="{{ route('booking') }}"><i class="fas fa-user"></i> Hire A HandyWorker</a></li>
+        @else
+            <li class="side-navigation__list__item"><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+            <form action="{{route('logout')}}" id="logout-form" method="POST" style="display:none;">@csrf</form>
+    @endguest
   </ul>
 </div>
