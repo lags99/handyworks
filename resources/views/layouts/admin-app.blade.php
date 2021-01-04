@@ -15,6 +15,7 @@
     <div class="container mt-5">
           @yield('admin-content')
     </div>
+    <script src="https://kit.fontawesome.com/f43319387c.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

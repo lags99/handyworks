@@ -104,7 +104,12 @@
                     <div class="form-group">
                         <label for="specialization">{{__('Choose Service')}}</label>
                         <select class="form-control @error('name') is-invalid @enderror" name="name" id="specialization">
-                            @include('includes.specialization-options')
+                           <option selected disabled>- Select</option>
+                           @if ($services->count())
+                               @foreach ($services as $service)
+                                   <option value="{{ $service->service_name }}">{{ $service->service_name }}</option>
+                               @endforeach
+                           @endif
                         </select>                       
                         @error('name')
                             <span class="invalid-feedback">

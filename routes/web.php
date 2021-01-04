@@ -12,6 +12,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InterviewController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SpecializationController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -70,7 +71,13 @@ Route::post('/add_certificate', [CertificateController::class, 'store'])->name('
 
 
 // Specialization Controller
-Route::post('add-service', [SpecializationController::class, 'store'])->name('service.store');
+Route::post('/add-specialization', [SpecializationController::class, 'store'])->name('service.store');
+
+// ServiceController
+Route::get('/hw-backend/services', [ServiceController::class, 'index'])->name('services');
+Route::post('/hw-backend/add-service', [ServiceController::class, 'store'])->name('create_service');
+
+Route::delete('/hw-backend/destroy-service/{service}', [ServiceController::class, 'destroy'])->name('delete_service');
 
 // Backend Routes
 Route::get('/hw-admin', [AdminLoginController::class, 'index'])->name('login_admin');

@@ -42,14 +42,14 @@
                             @endif
                     </div>
                 </form>
-                <div class="row my-5">
+                {{-- <div class="row my-5">
                     <div class="col-md-6 my-2">
                         <a href="{{ route('facebook.auth') }}" class="btn btn-block btn-fb"><i class="fab fa-facebook"></i> Sign In With Facebook</a>
                     </div>
                     <div class="col-md-6 my-2">
                         <a href="{{ route('google.auth') }}" class="btn btn-block btn-gmail"><i class="fab fa-google"></i> Sign In With Gmail</a>
                     </div>
-                </div>
+                </div> --}}
         </div>
     </div>
 @endsection
